@@ -1,20 +1,22 @@
 #NASA Asteroid Data Pipeline
 
 A data pipeline that ingests Near-Earth Object data from NASA API, processes it using a Medallion architecture (Bronze -> Silver -> Gold), and detects hazardous asteroids using Dagster sensors.
+
 ---------------------------------------------------------------------------------------------------------------
 NASA API
-   ↓
+   
 Dagster Ingestion Asset ( Ingest Automatically at 00:00 daily)
-   ↓
+   
 Bronze Layer (raw asteroid data)
-   ↓
+   
 Silver Layer (cleaned and structured data)
-   ↓
+   
 Gold Layer (analytics tables)
-   ↓
+
 Dagster Sensor (hazard detection)
-   ↓
+
 Email Alert ( Using GG Form to collect Email)
+
 ---------------------------------------------------------------------------------------------------------------
 Tech Stack:
   - Python
