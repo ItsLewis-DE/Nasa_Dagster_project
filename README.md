@@ -54,32 +54,34 @@ Conditions:
 
 ## Project Structure
 
+```
 src/
 │
 ├── defs/
 │   │
-│   ├── data/                     # Local data storage
-│   │   ├── email.json            # Email configuration
-│   │   ├── nasa_data.json        # Raw data fetched from NASA API
-│   │   └── request_email.json    # Email request payload
+│   ├── data/                    
+│   │   ├── email.json
+│   │   ├── nasa_data.json
+│   │   └── request_email.json
 │   │
-│   ├── bronze.py                 # Bronze layer: raw data ingestion
-│   ├── ingest_gg_form.py         # Data ingestion from Google Form
+│   ├── bronze.py              
+│   ├── ingest_gg_form.py        
 │   │
-│   ├── silver_transform.py       # Data cleaning and transformation
-│   ├── silver_write_into_db.py   # Load cleaned data into database
+│   ├── silver_transform.py     
+│   ├── silver_write_into_db.py  
 │   │
-│   ├── transform_data_gg_form.py # Transform Google Form data
+│   ├── transform_data_gg_form.py
 │   │
-│   ├── gold_layer.py             # Gold layer analytics tables
+│   ├── gold_layer.py           
 │   │
-│   ├── send_email.py             # Email sending logic
+│   ├── send_email.py            
 │   │
-│   ├── sensors.py                # Dagster sensors (hazard detection)
-│   ├── schedules.py              # Pipeline scheduling
-│   ├── jobs.py                   # Dagster jobs definitions
-│   ├── resources.py              # External resources (MySQL, etc.)
+│   ├── sensors.py             
+│   ├── schedules.py         
+│   ├── jobs.py                  
+│   ├── resources.py              
 │   │
-│   └── definitions.py            # Dagster repository definitions
+│   └── definitions.py           
 │
 └── README.md
+```
