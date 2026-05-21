@@ -19,7 +19,7 @@ def fetch_data_from_API():
         "api_key":os.getenv("API_KEY")
     }
     resp = requests.get(url,params=params)
-    path = Path("src/nasa_project/defs/data/nasa_data.json")
+    path = Path("src/defs/data/nasa_data.json")
     with open(path,"w") as f:
         json.dump(resp.json(),f,indent=2)
     return resp.json()

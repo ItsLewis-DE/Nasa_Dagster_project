@@ -11,6 +11,6 @@ def transform_gg_form_data(ingest_data_from_csv):
     with open(ingest_data_from_csv) as f:
         data = json.load(f)
     email=list(data["Your email"].values())
-    path = "src/nasa_project/defs/data/email.json"
+    path = "src/defs/data/email.json"
     with open(path,"w") as f:
         json.dump(email,f,indent=2)

@@ -1,7 +1,7 @@
 import dagster as dg
 import pandas as pd     
 from dagster_mysql import MySQLResource
-from src.nasa_project.defs import silver_write_into_db
+from src.defs.assets import silver_write_into_db
 
 @dg.asset(
     deps = [silver_write_into_db.clean_data],
