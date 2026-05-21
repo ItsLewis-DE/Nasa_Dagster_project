@@ -1,7 +1,7 @@
 import os
 import json
 import dagster as dg
-from .jobs import job_send_email
+from src.defs.jobs.jobs import job_send_email
 @dg.sensor(
     job = job_send_email
 )
@@ -11,7 +11,7 @@ def email_request_sensor(context:dg.SensorEvaluationContext):
     """
     state = json.loads(context.cursor) if context.cursor else {}
     last_line=state.get("email",0)
-    path_email="src/nasa_project/defs/data/email.json"
+    path_email="src/defs/data/email.json"
     if not os.path.exists(path_email):
         return dg.SensorResult(cursor=context.cursor)
     with open(path_email) as f:
@@ -19,7 +19,7 @@ def email_request_sensor(context:dg.SensorEvaluationContext):
     if last_line >=len(emails):
         return dg.SensorResult(cursor=context.cursor)
     email = emails[last_line]
-    file_asteroids = "src/nasa_project/defs/data/asteroid.csv"
+    file_asteroids = "src/defs/data/asteroid.csv"
     if not os.path.exists(file_asteroids):
         return dg.SensorResult(cursor=context.cursor)
 

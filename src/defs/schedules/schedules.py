@@ -1,5 +1,5 @@
-from .jobs import job_fetch_data
-from .jobs import job_gg_form
+from src.defs.jobs.jobs import job_fetch_data
+from src.defs.jobs.jobs import job_gg_form
 import dagster as dg
 
 data_update_schedule = dg.ScheduleDefinition(

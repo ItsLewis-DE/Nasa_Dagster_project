@@ -1,7 +1,7 @@
 import dagster as dg
 import json
 from datetime import datetime
-from src.nasa_project.defs import bronze
+from src.defs.assets import bronze
 @dg.asset (
     deps=[bronze.fetch_data_from_API],
     required_resource_keys={"mysql"},

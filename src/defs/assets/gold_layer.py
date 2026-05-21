@@ -1,6 +1,6 @@
 import dagster as dg
 from dagster_mysql import MySQLResource
-from src.nasa_project.defs import silver_transform
+from src.defs.assets import silver_transform
 import csv
 import datetime
 import os
@@ -124,7 +124,7 @@ def database_into_csv(context):
         """
         cursor.execute(query)
         rows=cursor.fetchall()
-    file_path="src/nasa_project/defs/data/asteroid.csv"
+    file_path="src/defs/data/asteroid.csv"
     if not rows:
         if os.path.exists(file_path):
             os.remove(file_path)
